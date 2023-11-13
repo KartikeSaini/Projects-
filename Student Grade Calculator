@@ -1,0 +1,71 @@
+TASK 2
+Input: Take marks obtained (out of 100) in each subject.
+Calculate Total Marks: Sum up the marks obtained in all subjects.
+Calculate Average Percentage: Divide the total marks by the total number of subjects to get the
+average percentage.
+Grade Calculation: Assign grades based on the average percentage achieved.
+Display Results: Show the total marks, average percentage, and the corresponding grade to the user
+STUDENT GRADE CALCULATOR
+
+Code//
+package com.company.java1;
+import java.util.Scanner;
+
+class student {
+
+    double marks;
+    float input, sum, subject1, subject2, subject3, subject4, subject5, percentage;
+
+    void inputMarks() {
+        System.out.println("Welcome to Student Grade Calculator");
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the marks of subject1");
+        float subject1 = sc.nextFloat();
+        System.out.println("Enter the marks of subject2");
+        float subject2 = sc.nextFloat();
+        System.out.println("Enter the marks of subject3");
+        float subject3 = sc.nextFloat();
+        System.out.println("Enter the marks of subject4");
+        float subject4 = sc.nextFloat();
+        System.out.println("Enter the marks of subject5");
+        float subject5 = sc.nextFloat();
+        sum = subject1 + subject2 + subject3 + subject4 + subject5;
+        System.out.println("Total marks of the student are " + sum);
+        percentage = sum / 5;
+        System.out.println("Average percentage of the student is " + percentage +"%");
+    }
+
+    void grade() {
+        if (percentage >= 90) {
+            System.out.println("You got Grade A+");
+        }
+        else if (percentage >= 80 && percentage<90) {
+            System.out.println("You got Grade A");
+        }
+        else if(percentage>=70 && percentage<80){
+            System.out.println("You got Grade B+");
+        }
+        else if(percentage>=60 && percentage<70){
+            System.out.println("You got Grade B");
+        }
+        else if(percentage>=50 && percentage<60){
+            System.out.println("You got Grade C+");
+        }
+        else if(percentage>=40 && percentage<50){
+            System.out.println("You got Grade C");
+        }
+        else if(percentage>=33 && percentage<40){
+            System.out.println("You are passed");
+        }
+        else if(percentage<33){
+            System.out.println("You are Failed");
+        }
+    }
+}
+public class studentGradeCalculator {
+    public static void main(String[] args) {
+        student s = new student();
+        s.inputMarks();
+        s.grade();
+    }
+}
